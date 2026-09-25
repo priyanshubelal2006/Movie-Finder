@@ -10,12 +10,11 @@ async function searchMovie(movieName) {
     movieDetail.innerHTML = `<div class="loader"></div>`
     let response = await fetch(`https://www.omdbapi.com/?apikey=6ed6e6bf&i=${imdbId}`)
     let data = await response.json();
-    console.log(data);
     if (data.Response === "True") {
         displayMovie(data)
     }
     else {
-        console.log(data.error);
+        console.log(data.Error);
     }
 }
 
